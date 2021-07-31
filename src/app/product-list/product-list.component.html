@@ -1,5 +1,27 @@
 <h2>Products</h2>
 
+<div *ngFor="let product of products">
+  <h3>
+    <!-- W/ propety binding => Phone XL details'-->
+    <a [title]="product.name + ' details'">
+      {{ product.name }}
+    </a>
+
+    <!-- No propety binding => product.name + ' details'-->
+    <a title="product.name + ' details'">
+      {{ product.name }}
+    </a>
+  </h3>
+  <p *ngIf="product.description">
+    Description: {{ product.description }}
+  </p>
+
+  <!-- Event binding'-->
+  <button (click)="share()">
+    Share
+  </button>
+  <app-product-alerts [productchild]="product"> </app-product-alerts>
+</div>
 
 <!-- 
 Copyright Google LLC. All Rights Reserved.
