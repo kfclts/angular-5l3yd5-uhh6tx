@@ -3,7 +3,10 @@
 <div *ngFor="let product of products">
   <h3>
     <!-- W/ propety binding => Phone XL details'-->
-    <a [title]="product.name + ' details'">
+    <a
+      [title]="product.name + ' details'"
+      [routerLink]="['/products', product.id]"
+    >
       {{ product.name }}
     </a>
 
@@ -20,7 +23,9 @@
   <button (click)="share()">
     Share
   </button>
-  <app-product-alerts [productchild]="product" (notify)="onNotify()">> </app-product-alerts>
+  <app-product-alerts [productchild]="product" (notify)="onNotify()"
+    >>
+  </app-product-alerts>
 </div>
 
 <!-- 
