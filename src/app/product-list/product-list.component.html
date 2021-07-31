@@ -20,7 +20,7 @@
   <button (click)="share()">
     Share
   </button>
-  <app-product-alerts [productchild]="product"> </app-product-alerts>
+  <app-product-alerts [productchild]="product" (notify)="onNotify()">> </app-product-alerts>
 </div>
 
 <!-- 
